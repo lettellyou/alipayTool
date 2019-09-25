@@ -37,7 +37,7 @@ class Rsasign
     private static function getPrivateKey()
     {
         $privKey = self::$rsaPrivateKey;
-        $privKey = "-----BEGIN RSA PRIVATE KEY-----" . PHP_EOL . wordwrap($privKey, 64, PHP_EOL, true) . PHP_EOL . "-----END RSA PRIVATE KEY-----";
+        $privKey = "-----BEGIN RSA PRIVATE KEY-----" . PHP_EOL . wordwrap($privKey, 64, PHP_EOL, true) . "-----END RSA PRIVATE KEY-----";
         ($privKey) or die('您使用的私钥格式错误，请检查RSA私钥配置');
         return openssl_pkey_get_private($privKey);
     }
